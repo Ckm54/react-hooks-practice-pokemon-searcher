@@ -17,11 +17,15 @@ function PokemonPage() {
     const filteredList = pokemons.filter((pokemon) => (pokemon.name).includes(input))
     setPokemons(filteredList)
   }
+
+  function addPokemon(pokemon) {
+    setPokemons([...pokemons, pokemon])
+  }
   return (
     <Container>
       <h1>Pokemon Searcher</h1>
       <br />
-      <PokemonForm />
+      <PokemonForm addPokemon={addPokemon}/>
       <br />
       <Search searchPokemon={searchPokemon}/>
       <br />
